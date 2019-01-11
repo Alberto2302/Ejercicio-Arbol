@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+        <style>
+            
+            .contenedor p{
+                text-align: center;
+                letter-spacing: 30px;
+            }
+        </style>
+</head>
+<body>
+   
+    <div class="col-75">
+        <input type="text" id="base"  name="base" placeholder="base.." >
+    </div>
+
+    <div class="col-75">
+        <input type="text" id="simbolo"  name="simbolo" placeholder="simbolo.." >
+    </div>
+    <div class="col-75">
+        <input type="text" id="color"  name="color" placeholder="color.." >
+    </div>
+    <button onclick="pyramid()"> imprimir  </button>
+    <h1>Piramide</h1>
+    <div class="contenedor" >
+    </div>
+    <script>
+
+        var base  = document.getElementById("base")
+        var simbolo = document.getElementById("simbolo")
+        var color = document.getElementById("color")
+        
+        
+        
+        var arbol = document.getElementsByClassName("contenedor")
+        arbol = arbol[0]        
+        function pyramid(){
+            arbol.innerHTML = "";
+            let baseV = base.value ;
+            let simboloV = simbolo.value;
+            let colorV = color.value;
+            
+            
+            for(var i= 0; i < baseV;i++){
+                arbol.innerHTML += "<p class='parrafo' >" + simboloV.repeat(i+1) + "</p>" ;
+            // var parrafo= document.getElementById("parrafo")
+            let parrafo = document.getElementsByClassName("parrafo")
+            console.log(parrafo);
+            
+
+            parrafo[i].style.color = colorV
+                console.log(simboloV.repeat(i));
+            }
+        }
+
+    </script>
+</body>
+</html>
